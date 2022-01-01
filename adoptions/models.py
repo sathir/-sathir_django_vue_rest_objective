@@ -10,3 +10,6 @@ class Pet(models.Model):
     sex = models.CharField(max_length=1,choices=SEX_CHOICES,blank=True)
     submission_date = models.DateTimeField()
     age = models.IntegerField(null=True)
+
+class Vaccine(models.Model):
+    name = models.CharField(max_length=50)

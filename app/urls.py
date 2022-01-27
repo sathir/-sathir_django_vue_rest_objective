@@ -16,11 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from adoptions import views,api_views
+from adoptions import views, api_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('adoptions/<int:pet_id>/', views.pet_detail, name='pet_detail'),
     path('api/v1/pets/', api_views.PetList.as_view()),
+    path('api/v1/pets/new', api_views.PetCreate.as_view()),
 ]

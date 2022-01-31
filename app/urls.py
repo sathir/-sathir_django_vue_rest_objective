@@ -24,4 +24,7 @@ urlpatterns = [
     path('adoptions/<int:pet_id>/', views.pet_detail, name='pet_detail'),
     path('api/v1/pets/', api_views.PetList.as_view()),
     path('api/v1/pets/new', api_views.PetCreate.as_view()),
+    path('api/v1/pets/<int:id>/',
+        api_views.PetRetrieveUpdateDestroy.as_view()
+    ),
 ]

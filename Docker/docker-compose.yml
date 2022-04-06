@@ -2,7 +2,11 @@ version: '3'
 services:
   web:
     container_name: django-objective
-    build: .
+    build:
+          context: ../
+          dockerfile: Docker/Dockerfile
+    volumes:
+      - ../:/app
     command: python manage.py runserver 0.0.0.0:5000
     ports:
         - 5000:5000
